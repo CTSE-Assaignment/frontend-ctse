@@ -1,26 +1,47 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Text, Button, Img, Heading, TextArea, Input, GoogleMap } from "../../components";
+import {
+  Text,
+  Button,
+  Img,
+  Heading,
+  TextArea,
+  Input,
+  GoogleMap,
+} from "../../components";
 
 export default function AboutUsPage() {
   return (
     <>
       <Helmet>
-        <title>Dimuthu's Application1</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <title>Train Ticket Management System</title>
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="w-full bg-white-A700 pt-[123px] md:pt-5">
         <div className="flex flex-col items-center gap-[135px] md:gap-[101px] sm:gap-[67px]">
           <div className="h-[915px] self-stretch bg-[url(/public/images/img_group_1498.png)] bg-cover bg-no-repeat md:h-auto">
             <div className="flex justify-center bg-black-900_63 px-14 py-[105px] md:p-5">
               <div className="mb-[203px] mt-[122px] flex w-[91%] flex-col items-center gap-[23px] md:w-full">
-                <Text size="lg" as="p" className="text-center !font-amita !text-white-A700">
+                <Text
+                  size="lg"
+                  as="p"
+                  className="text-center !font-amita !text-white-A700"
+                >
                   Our team cares about your full safety and easiness.
                 </Text>
-                <Heading size="lg" as="h1" className="w-[52%] text-center !text-white-A700 md:w-full">
-                  But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
-                  and I will give you a complete account of the system, and expound the actual teachings of the great
-                  explorer of the truth, the master-builder of human happiness.
+                <Heading
+                  size="lg"
+                  as="h1"
+                  className="w-[52%] text-center !text-white-A700 md:w-full"
+                >
+                  But I must explain to you how all this mistaken idea of
+                  denouncing pleasure and praising pain was born and I will give
+                  you a complete account of the system, and expound the actual
+                  teachings of the great explorer of the truth, the
+                  master-builder of human happiness.
                 </Heading>
                 <Button
                   color="white_A700"
@@ -78,8 +99,16 @@ export default function AboutUsPage() {
                     className="h-[263px] w-full object-cover md:h-auto"
                   />
                   <div className="relative mt-[-16px] flex w-[27%] items-start md:w-full">
-                    <Img src="images/img_television.svg" alt="television_one" className="h-[56px] w-[67%]" />
-                    <Img src="images/img_contrast.svg" alt="contrast_one" className="relative ml-[-18px] h-[19px]" />
+                    <Img
+                      src="images/img_television.svg"
+                      alt="television_one"
+                      className="h-[56px] w-[67%]"
+                    />
+                    <Img
+                      src="images/img_contrast.svg"
+                      alt="contrast_one"
+                      className="relative ml-[-18px] h-[19px]"
+                    />
                   </div>
                 </div>
                 <Img
@@ -96,12 +125,18 @@ export default function AboutUsPage() {
                 </Heading>
               </div>
               <Text size="s" as="p" className="leading-8 !text-blue_gray-900">
-                Join us as we embark on a journey to redefine the future of railway transportation and create a
-                world-class travel experience for all. Book with us and we will always be available for you!
+                Join us as we embark on a journey to redefine the future of
+                railway transportation and create a world-class travel
+                experience for all. Book with us and we will always be available
+                for you!
               </Text>
               <div className="flex w-[48%] items-center justify-between gap-5 md:w-full">
                 <div className="flex flex-col items-start gap-0.5">
-                  <Heading size="xl" as="h3" className="!font-bold !text-orange-600">
+                  <Heading
+                    size="xl"
+                    as="h3"
+                    className="!font-bold !text-orange-600"
+                  >
                     12+
                   </Heading>
                   <Text as="p">
@@ -113,7 +148,11 @@ export default function AboutUsPage() {
                   </Text>
                 </div>
                 <div className="flex flex-col gap-0.5 self-start">
-                  <Heading size="xl" as="h4" className="!font-bold !text-orange-600">
+                  <Heading
+                    size="xl"
+                    as="h4"
+                    className="!font-bold !text-orange-600"
+                  >
                     100+
                   </Heading>
                   <Text as="p">
@@ -125,7 +164,11 @@ export default function AboutUsPage() {
                   </Text>
                 </div>
                 <div className="flex flex-col items-start self-start">
-                  <Heading size="xl" as="h5" className="!font-bold !text-orange-600">
+                  <Heading
+                    size="xl"
+                    as="h5"
+                    className="!font-bold !text-orange-600"
+                  >
                     15+
                   </Heading>
                   <Text as="p">
@@ -150,9 +193,13 @@ export default function AboutUsPage() {
                 Get In Touch!
               </Heading>
               <Heading as="h3" className="w-[78%] md:w-full">
-                Fill up the form and our Team will get back to you within 24 hours.
+                Fill up the form and our Team will get back to you within 24
+                hours.
               </Heading>
-              <GoogleMap showMarker={false} className="h-[417px] self-stretch" />
+              <GoogleMap
+                showMarker={false}
+                className="h-[417px] self-stretch"
+              />
             </div>
             <div className="mr-[279px] flex w-[51%] flex-col items-center gap-[29px] rounded-[24px] bg-white-A700_4c p-[29px] md:mr-0 md:w-full md:p-5">
               <div className="flex flex-col items-start gap-2 self-stretch">
@@ -186,7 +233,10 @@ export default function AboutUsPage() {
                   className="self-stretch text-blue_gray-900_7f sm:px-5 sm:pb-5"
                 />
               </div>
-              <Button size="xs" className="min-w-[212px] rounded-[23px] font-semibold sm:px-5">
+              <Button
+                size="xs"
+                className="min-w-[212px] rounded-[23px] font-semibold sm:px-5"
+              >
                 Send Message
               </Button>
             </div>
@@ -197,7 +247,11 @@ export default function AboutUsPage() {
             <div className="h-px w-full self-stretch bg-white-A700_19" />
             <div className="flex items-start justify-between gap-5 self-stretch md:flex-col">
               <div className="flex flex-col items-start gap-5">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Home
                 </Heading>
                 <div className="flex flex-col items-start gap-3.5">
@@ -219,7 +273,11 @@ export default function AboutUsPage() {
                 </div>
               </div>
               <div className="flex flex-col items-start justify-center gap-5">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Help
                 </Heading>
                 <a href="#">
@@ -229,13 +287,24 @@ export default function AboutUsPage() {
                 </a>
               </div>
               <div className="flex w-[23%] flex-col items-start gap-5 md:w-full">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Contacts
                 </Heading>
                 <div className="flex flex-col gap-[19px] self-stretch">
                   <div className="flex items-center gap-2.5">
-                    <Img src="images/img_ci_location.svg" alt="cilocation_one" className="h-[24px] w-[24px]" />
-                    <Heading as="h6" className="w-[92%] leading-[26px] !text-white-A700">
+                    <Img
+                      src="images/img_ci_location.svg"
+                      alt="cilocation_one"
+                      className="h-[24px] w-[24px]"
+                    />
+                    <Heading
+                      as="h6"
+                      className="w-[92%] leading-[26px] !text-white-A700"
+                    >
                       <>
                         Sri Lanka Railways Headquarters,
                         <br />
@@ -266,7 +335,11 @@ export default function AboutUsPage() {
                 </div>
               </div>
               <div className="flex flex-col items-center gap-5">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Social Media
                 </Heading>
                 <div className="flex gap-5 self-start">
@@ -284,7 +357,8 @@ export default function AboutUsPage() {
             </div>
             <div className="h-px w-full self-stretch bg-white-A700_19" />
             <Text as="p" className="text-center !text-white-A700">
-              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka Railways
+              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka
+              Railways
             </Text>
           </div>
         </footer>

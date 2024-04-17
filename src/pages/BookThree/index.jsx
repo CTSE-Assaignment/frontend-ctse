@@ -6,8 +6,11 @@ export default function BookThreePage() {
   return (
     <>
       <Helmet>
-        <title>Dimuthu's Application1</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <title>Train Ticket Management System</title>
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex w-full flex-col items-center justify-center gap-[131px] bg-white-A700 pt-[241px] md:gap-[98px] md:pt-5 sm:gap-[65px]">
         <div className="mx-auto flex w-full max-w-[1356px] flex-col items-center md:p-5">
@@ -23,7 +26,11 @@ export default function BookThreePage() {
                     >
                       1
                     </Heading>
-                    <Heading size="md" as="h2" className="text-center !text-orange-600">
+                    <Heading
+                      size="md"
+                      as="h2"
+                      className="text-center !text-orange-600"
+                    >
                       Train Details
                     </Heading>
                   </div>
@@ -35,7 +42,11 @@ export default function BookThreePage() {
                     >
                       2
                     </Heading>
-                    <Heading size="md" as="h4" className="text-center !text-orange-600">
+                    <Heading
+                      size="md"
+                      as="h4"
+                      className="text-center !text-orange-600"
+                    >
                       Your Details
                     </Heading>
                   </div>
@@ -64,12 +75,20 @@ export default function BookThreePage() {
               >
                 4
               </Heading>
-              <Text size="md" as="p" className="text-center !text-blue_gray-900_66">
+              <Text
+                size="md"
+                as="p"
+                className="text-center !text-blue_gray-900_66"
+              >
                 Ticket Summery
               </Text>
             </div>
           </div>
-          <Heading size="xl" as="h2" className="ml-2 mt-[81px] self-start md:ml-0">
+          <Heading
+            size="xl"
+            as="h2"
+            className="ml-2 mt-[81px] self-start md:ml-0"
+          >
             Select a payment method
           </Heading>
           <div className="mt-12 flex items-start justify-between gap-5 self-stretch md:flex-col">
@@ -81,17 +100,29 @@ export default function BookThreePage() {
                   label="PayPal"
                   className="mt-[9px] gap-2 text-lg font-semibold text-blue_gray-900"
                 />
-                <Text as="p" className="ml-[15px] mt-1 w-[76%] leading-6 !text-blue_gray-900 md:ml-0 md:w-full">
-                  You will be redirected to the PayPal website after submitting your order
+                <Text
+                  as="p"
+                  className="ml-[15px] mt-1 w-[76%] leading-6 !text-blue_gray-900 md:ml-0 md:w-full"
+                >
+                  You will be redirected to the PayPal website after submitting
+                  your order
                 </Text>
                 <div className="ml-[29px] mt-[3px] flex w-[7%] justify-center rounded border border-solid border-blue_gray-200 bg-white-A700 p-[5px] md:ml-0 md:w-full md:p-5">
-                  <Img src="images/img_call.svg" alt="call_one" className="h-[14px] w-[13px]" />
+                  <Img
+                    src="images/img_call.svg"
+                    alt="call_one"
+                    className="h-[14px] w-[13px]"
+                  />
                 </div>
               </div>
               <div className="flex flex-col items-start rounded-[12px] border border-solid border-yellow-800 p-2.5">
                 <div className="mr-[3px] flex gap-[17px] self-end md:mr-0">
                   <div className="flex rounded border border-solid border-blue_gray-200 bg-white-A700 p-[5px]">
-                    <Img src="images/img_settings.svg" alt="settings_one" className="my-[3px] h-[8px]" />
+                    <Img
+                      src="images/img_settings.svg"
+                      alt="settings_one"
+                      className="my-[3px] h-[8px]"
+                    />
                   </div>
                   <div className="flex rounded border border-solid border-blue_gray-200 bg-white-A700 p-px">
                     <Img
@@ -101,10 +132,18 @@ export default function BookThreePage() {
                     />
                   </div>
                   <div className="flex rounded border border-solid border-blue_gray-200 bg-white-A700 p-[5px]">
-                    <Img src="images/img_close.svg" alt="close_one" className="h-[15px] self-start" />
+                    <Img
+                      src="images/img_close.svg"
+                      alt="close_one"
+                      className="h-[15px] self-start"
+                    />
                   </div>
                   <div className="flex rounded border border-solid border-blue_gray-200 bg-white-A700 p-[5px]">
-                    <Img src="images/img_user_red_a700.svg" alt="user_one" className="h-[15px] self-start" />
+                    <Img
+                      src="images/img_user_red_a700.svg"
+                      alt="user_one"
+                      className="h-[15px] self-start"
+                    />
                   </div>
                 </div>
                 <div className="ml-1 mt-[34px] flex w-[79%] flex-col items-start gap-[15px] md:ml-0 md:w-full">
@@ -166,7 +205,11 @@ export default function BookThreePage() {
                       >
                         2
                       </Heading>
-                      <Text size="md" as="p" className="mb-[3px] self-end text-center !text-blue_gray-900_cc">
+                      <Text
+                        size="md"
+                        as="p"
+                        className="mb-[3px] self-end text-center !text-blue_gray-900_cc"
+                      >
                         Adult (18+){" "}
                       </Text>
                     </div>
@@ -183,7 +226,11 @@ export default function BookThreePage() {
                       >
                         1
                       </Heading>
-                      <Text size="md" as="p" className="mb-[3px] self-end text-center !text-blue_gray-900_cc">
+                      <Text
+                        size="md"
+                        as="p"
+                        className="mb-[3px] self-end text-center !text-blue_gray-900_cc"
+                      >
                         Child (6-17)
                       </Text>
                     </div>
@@ -200,7 +247,11 @@ export default function BookThreePage() {
                       >
                         1
                       </Heading>
-                      <Text size="md" as="p" className="mb-[3px] self-end text-center !text-blue_gray-900_cc">
+                      <Text
+                        size="md"
+                        as="p"
+                        className="mb-[3px] self-end text-center !text-blue_gray-900_cc"
+                      >
                         Infant (0-5){" "}
                       </Text>
                     </div>
@@ -210,15 +261,27 @@ export default function BookThreePage() {
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-5 py-[5px] pl-[5px]">
-                  <Heading size="lg" as="h4" className="mb-3.5 mt-[15px] !text-blue_gray-900_cc">
+                  <Heading
+                    size="lg"
+                    as="h4"
+                    className="mb-3.5 mt-[15px] !text-blue_gray-900_cc"
+                  >
                     Total Price
                   </Heading>
-                  <Heading size="lg" as="h4" className="text-right !text-orange-600">
+                  <Heading
+                    size="lg"
+                    as="h4"
+                    className="text-right !text-orange-600"
+                  >
                     Rs.2100.00
                   </Heading>
                 </div>
               </div>
-              <Button size="xl" shape="round" className="w-full font-bold sm:px-5">
+              <Button
+                size="xl"
+                shape="round"
+                className="w-full font-bold sm:px-5"
+              >
                 Checkout
               </Button>
             </div>
@@ -230,7 +293,11 @@ export default function BookThreePage() {
             <div className="flex flex-col gap-8 self-stretch">
               <div className="flex items-start justify-between gap-5 md:flex-col">
                 <div className="flex flex-col items-start gap-5">
-                  <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                  <Heading
+                    size="md"
+                    as="h5"
+                    className="!font-extrabold !text-white-A700"
+                  >
                     Home
                   </Heading>
                   <div className="flex flex-col items-start gap-3.5">
@@ -247,7 +314,11 @@ export default function BookThreePage() {
                   </div>
                 </div>
                 <div className="flex flex-col items-start justify-center gap-5">
-                  <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                  <Heading
+                    size="md"
+                    as="h5"
+                    className="!font-extrabold !text-white-A700"
+                  >
                     Help
                   </Heading>
                   <a href="#">
@@ -257,13 +328,24 @@ export default function BookThreePage() {
                   </a>
                 </div>
                 <div className="flex w-[23%] flex-col items-start gap-5 md:w-full">
-                  <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                  <Heading
+                    size="md"
+                    as="h5"
+                    className="!font-extrabold !text-white-A700"
+                  >
                     Contacts
                   </Heading>
                   <div className="flex flex-col gap-[19px] self-stretch">
                     <div className="flex items-center gap-2.5">
-                      <Img src="images/img_ci_location.svg" alt="cilocation_one" className="h-[24px] w-[24px]" />
-                      <Heading as="h6" className="w-[92%] leading-[26px] !text-white-A700">
+                      <Img
+                        src="images/img_ci_location.svg"
+                        alt="cilocation_one"
+                        className="h-[24px] w-[24px]"
+                      />
+                      <Heading
+                        as="h6"
+                        className="w-[92%] leading-[26px] !text-white-A700"
+                      >
                         <>
                           Sri Lanka Railways Headquarters,
                           <br />
@@ -294,7 +376,11 @@ export default function BookThreePage() {
                   </div>
                 </div>
                 <div className="flex flex-col items-center gap-5">
-                  <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                  <Heading
+                    size="md"
+                    as="h5"
+                    className="!font-extrabold !text-white-A700"
+                  >
                     Social Media
                   </Heading>
                   <div className="flex gap-5 self-start">
@@ -313,7 +399,8 @@ export default function BookThreePage() {
               <div className="h-px bg-white-A700_19" />
             </div>
             <Text as="p" className="text-center !text-white-A700">
-              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka Railways
+              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka
+              Railways
             </Text>
           </div>
         </footer>

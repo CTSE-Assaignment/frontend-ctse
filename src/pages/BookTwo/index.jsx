@@ -12,8 +12,11 @@ export default function BookTwoPage() {
   return (
     <>
       <Helmet>
-        <title>Dimuthu's Application1</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <title>Train Ticket Management System</title>
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex w-full flex-col items-center justify-center gap-[142px] bg-white-A700 pt-[228px] md:gap-[106px] md:pt-5 sm:gap-[71px]">
         <div className="mx-auto flex w-full max-w-[1437px] flex-col items-center gap-[110px] md:gap-[82px] md:p-5 sm:gap-[55px]">
@@ -27,7 +30,11 @@ export default function BookTwoPage() {
                 >
                   1
                 </Heading>
-                <Heading size="md" as="h2" className="text-center !text-orange-600">
+                <Heading
+                  size="md"
+                  as="h2"
+                  className="text-center !text-orange-600"
+                >
                   Train Details
                 </Heading>
               </div>
@@ -39,7 +46,11 @@ export default function BookTwoPage() {
                 >
                   2
                 </Heading>
-                <Heading size="md" as="h4" className="text-center !text-orange-600">
+                <Heading
+                  size="md"
+                  as="h4"
+                  className="text-center !text-orange-600"
+                >
                   Your Details
                 </Heading>
               </div>
@@ -51,7 +62,11 @@ export default function BookTwoPage() {
                 >
                   3
                 </Heading>
-                <Text size="md" as="p" className="text-center !text-blue_gray-900_66">
+                <Text
+                  size="md"
+                  as="p"
+                  className="text-center !text-blue_gray-900_66"
+                >
                   Confirmation & Payment
                 </Text>
               </div>
@@ -64,7 +79,11 @@ export default function BookTwoPage() {
               >
                 4
               </Heading>
-              <Text size="md" as="p" className="text-center !text-blue_gray-900_66">
+              <Text
+                size="md"
+                as="p"
+                className="text-center !text-blue_gray-900_66"
+              >
                 Ticket Summery
               </Text>
             </div>
@@ -107,7 +126,13 @@ export default function BookTwoPage() {
                     <SelectBox
                       size="sm"
                       shape="round"
-                      indicator={<Img src="images/img_arrowdown.svg" alt="arrow_down" className="h-[20px] w-[20px]" />}
+                      indicator={
+                        <Img
+                          src="images/img_arrowdown.svg"
+                          alt="arrow_down"
+                          className="h-[20px] w-[20px]"
+                        />
+                      }
                       name="selectthe"
                       placeholder={`Select the Gender`}
                       options={dropDownOptions}
@@ -121,7 +146,13 @@ export default function BookTwoPage() {
                     <SelectBox
                       size="sm"
                       shape="round"
-                      indicator={<Img src="images/img_arrowdown.svg" alt="arrow_down" className="h-[20px] w-[20px]" />}
+                      indicator={
+                        <Img
+                          src="images/img_arrowdown.svg"
+                          alt="arrow_down"
+                          className="h-[20px] w-[20px]"
+                        />
+                      }
                       name="time"
                       placeholder={`15.00 PM`}
                       options={dropDownOptions}
@@ -163,7 +194,11 @@ export default function BookTwoPage() {
                       <Heading size="md" as="h5" className="!font-bold">
                         Adult (18+)
                       </Heading>
-                      <Heading size="md" as="h5" className="!font-bold !text-orange-600">
+                      <Heading
+                        size="md"
+                        as="h5"
+                        className="!font-bold !text-orange-600"
+                      >
                         Rs.1400.00
                       </Heading>
                     </div>
@@ -171,7 +206,12 @@ export default function BookTwoPage() {
                       <Button shape="square" className="w-[50px]">
                         <Img src="images/img_arrow_down_blue_gray_900.svg" />
                       </Button>
-                      <Button color="gray_200" size="sm" shape="square" className="min-w-[50px] font-semibold">
+                      <Button
+                        color="gray_200"
+                        size="sm"
+                        shape="square"
+                        className="min-w-[50px] font-semibold"
+                      >
                         0
                       </Button>
                       <Button shape="square" className="w-[50px]">
@@ -187,7 +227,11 @@ export default function BookTwoPage() {
                       <Text size="s" as="p">
                         Only in combination with: Adult (18+)
                       </Text>
-                      <Heading size="md" as="h5" className="!font-bold !text-orange-600">
+                      <Heading
+                        size="md"
+                        as="h5"
+                        className="!font-bold !text-orange-600"
+                      >
                         Rs. 700.00{" "}
                       </Heading>
                     </div>
@@ -195,7 +239,12 @@ export default function BookTwoPage() {
                       <Button shape="square" className="w-[50px]">
                         <Img src="images/img_arrow_down_blue_gray_900.svg" />
                       </Button>
-                      <Button color="gray_200" size="sm" shape="square" className="min-w-[50px] font-semibold">
+                      <Button
+                        color="gray_200"
+                        size="sm"
+                        shape="square"
+                        className="min-w-[50px] font-semibold"
+                      >
                         0
                       </Button>
                       <Button shape="square" className="w-[50px]">
@@ -211,7 +260,11 @@ export default function BookTwoPage() {
                       <Text size="s" as="p" className="ml-2.5 md:ml-0">
                         Only in combination with: Adult (18+)
                       </Text>
-                      <Heading size="md" as="h5" className="!font-bold !text-orange-600">
+                      <Heading
+                        size="md"
+                        as="h5"
+                        className="!font-bold !text-orange-600"
+                      >
                         FREE
                       </Heading>
                     </div>
@@ -219,7 +272,12 @@ export default function BookTwoPage() {
                       <Button shape="square" className="w-[50px]">
                         <Img src="images/img_arrow_down_blue_gray_900.svg" />
                       </Button>
-                      <Button color="gray_200" size="sm" shape="square" className="min-w-[50px] font-semibold">
+                      <Button
+                        color="gray_200"
+                        size="sm"
+                        shape="square"
+                        className="min-w-[50px] font-semibold"
+                      >
                         0
                       </Button>
                       <Button shape="square" className="w-[50px]">
@@ -270,7 +328,11 @@ export default function BookTwoPage() {
                       >
                         2
                       </Heading>
-                      <Text size="md" as="p" className="mb-[3px] self-end text-center !text-blue_gray-900_cc">
+                      <Text
+                        size="md"
+                        as="p"
+                        className="mb-[3px] self-end text-center !text-blue_gray-900_cc"
+                      >
                         Adult (18+){" "}
                       </Text>
                     </div>
@@ -287,7 +349,11 @@ export default function BookTwoPage() {
                       >
                         1
                       </Heading>
-                      <Text size="md" as="p" className="mb-[3px] self-end text-center !text-blue_gray-900_cc">
+                      <Text
+                        size="md"
+                        as="p"
+                        className="mb-[3px] self-end text-center !text-blue_gray-900_cc"
+                      >
                         Child (6-17)
                       </Text>
                     </div>
@@ -304,7 +370,11 @@ export default function BookTwoPage() {
                       >
                         1
                       </Heading>
-                      <Text size="md" as="p" className="mb-[3px] self-end text-center !text-blue_gray-900_cc">
+                      <Text
+                        size="md"
+                        as="p"
+                        className="mb-[3px] self-end text-center !text-blue_gray-900_cc"
+                      >
                         Infant (0-5){" "}
                       </Text>
                     </div>
@@ -314,15 +384,27 @@ export default function BookTwoPage() {
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-5 py-[5px] pl-[5px]">
-                  <Heading size="lg" as="h4" className="mb-3.5 mt-[15px] !text-blue_gray-900_cc">
+                  <Heading
+                    size="lg"
+                    as="h4"
+                    className="mb-3.5 mt-[15px] !text-blue_gray-900_cc"
+                  >
                     Total Price
                   </Heading>
-                  <Heading size="lg" as="h4" className="text-right !text-orange-600">
+                  <Heading
+                    size="lg"
+                    as="h4"
+                    className="text-right !text-orange-600"
+                  >
                     Rs.0.00
                   </Heading>
                 </div>
               </div>
-              <Button size="xl" shape="round" className="w-full font-bold sm:px-5">
+              <Button
+                size="xl"
+                shape="round"
+                className="w-full font-bold sm:px-5"
+              >
                 Go to the Next Step
               </Button>
             </div>
@@ -333,7 +415,11 @@ export default function BookTwoPage() {
             <div className="h-px w-full self-stretch bg-white-A700_19" />
             <div className="flex items-start justify-between gap-5 self-stretch md:flex-col">
               <div className="flex flex-col items-start gap-5">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Home
                 </Heading>
                 <div className="flex flex-col items-start gap-3.5">
@@ -350,7 +436,11 @@ export default function BookTwoPage() {
                 </div>
               </div>
               <div className="flex flex-col items-start justify-center gap-5">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Help
                 </Heading>
                 <a href="#">
@@ -360,13 +450,24 @@ export default function BookTwoPage() {
                 </a>
               </div>
               <div className="flex w-[23%] flex-col items-start gap-5 md:w-full">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Contacts
                 </Heading>
                 <div className="flex flex-col gap-[19px] self-stretch">
                   <div className="flex items-center gap-2.5">
-                    <Img src="images/img_ci_location.svg" alt="cilocation_one" className="h-[24px] w-[24px]" />
-                    <Heading as="h6" className="w-[92%] leading-[26px] !text-white-A700">
+                    <Img
+                      src="images/img_ci_location.svg"
+                      alt="cilocation_one"
+                      className="h-[24px] w-[24px]"
+                    />
+                    <Heading
+                      as="h6"
+                      className="w-[92%] leading-[26px] !text-white-A700"
+                    >
                       <>
                         Sri Lanka Railways Headquarters,
                         <br />
@@ -397,7 +498,11 @@ export default function BookTwoPage() {
                 </div>
               </div>
               <div className="flex flex-col items-center gap-5">
-                <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                <Heading
+                  size="md"
+                  as="h5"
+                  className="!font-extrabold !text-white-A700"
+                >
                   Social Media
                 </Heading>
                 <div className="flex gap-5 self-start">
@@ -415,7 +520,8 @@ export default function BookTwoPage() {
             </div>
             <div className="h-px w-full self-stretch bg-white-A700_19" />
             <Text as="p" className="text-center !text-white-A700">
-              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka Railways
+              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka
+              Railways
             </Text>
           </div>
         </footer>

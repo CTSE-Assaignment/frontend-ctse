@@ -11,10 +11,29 @@ const tableData = [
     rowarrival: "18.09",
     availability: "15",
   },
-  { trainname: "FRI, 23 DEC 2024", depature: "14.45", rowarrival: "18.09", availability: "15" },
-  { trainname: "14:30 - 18:05 PM", depature: "14.45", rowarrival: "Air Condition ", availability: "15" },
-  { trainname: "8056 Express Train - Maradana - Beliatta ", depature: "14.45", availability: "15" },
-  { trainname: "FRI, 23 DEC 2024", depature: "14.45", rowarrival: "18.09", availability: "15" },
+  {
+    trainname: "FRI, 23 DEC 2024",
+    depature: "14.45",
+    rowarrival: "18.09",
+    availability: "15",
+  },
+  {
+    trainname: "14:30 - 18:05 PM",
+    depature: "14.45",
+    rowarrival: "Air Condition ",
+    availability: "15",
+  },
+  {
+    trainname: "8056 Express Train - Maradana - Beliatta ",
+    depature: "14.45",
+    availability: "15",
+  },
+  {
+    trainname: "FRI, 23 DEC 2024",
+    depature: "14.45",
+    rowarrival: "18.09",
+    availability: "15",
+  },
   { trainname: "14:30 - 18:05 PM", depature: "14.45", availability: "15" },
 ];
 
@@ -29,7 +48,11 @@ export default function BookPage() {
           </Heading>
         ),
         header: (info) => (
-          <Heading size="md" as="h3" className="py-[17px] pl-2.5 !text-blue_gray-900_99">
+          <Heading
+            size="md"
+            as="h3"
+            className="py-[17px] pl-2.5 !text-blue_gray-900_99"
+          >
             Train Name
           </Heading>
         ),
@@ -42,7 +65,11 @@ export default function BookPage() {
           </Heading>
         ),
         header: (info) => (
-          <Heading size="md" as="h4" className="py-[17px] text-center !text-blue_gray-900_99">
+          <Heading
+            size="md"
+            as="h4"
+            className="py-[17px] text-center !text-blue_gray-900_99"
+          >
             Depature
           </Heading>
         ),
@@ -52,10 +79,18 @@ export default function BookPage() {
         cell: (info) => <Heading as="h6">{info?.getValue?.()}</Heading>,
         header: (info) => (
           <div className="flex flex-wrap items-start p-3.5">
-            <Heading size="md" as="h5" className="mb-1 text-center !text-blue_gray-900_99">
+            <Heading
+              size="md"
+              as="h5"
+              className="mb-1 text-center !text-blue_gray-900_99"
+            >
               Arrival
             </Heading>
-            <Heading size="md" as="h6" className="mr-[115px] text-center !text-blue_gray-900_99">
+            <Heading
+              size="md"
+              as="h6"
+              className="mr-[115px] text-center !text-blue_gray-900_99"
+            >
               Class
             </Heading>
           </div>
@@ -69,7 +104,11 @@ export default function BookPage() {
           </Heading>
         ),
         header: (info) => (
-          <Heading size="md" as="h5" className="py-[17px] text-center !text-blue_gray-900_99">
+          <Heading
+            size="md"
+            as="h5"
+            className="py-[17px] text-center !text-blue_gray-900_99"
+          >
             Availability
           </Heading>
         ),
@@ -81,8 +120,11 @@ export default function BookPage() {
   return (
     <>
       <Helmet>
-        <title>Dimuthu's Application1</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <title>Train Ticket Management System</title>
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex w-full flex-col items-center gap-9 bg-white-A700">
         <div className="mx-auto mt-56 flex w-full max-w-[1459px] flex-col items-center gap-[110px] md:gap-[82px] md:p-5 sm:gap-[55px]">
@@ -96,7 +138,11 @@ export default function BookPage() {
                 >
                   1
                 </Heading>
-                <Heading size="md" as="h2" className="text-center !text-orange-600">
+                <Heading
+                  size="md"
+                  as="h2"
+                  className="text-center !text-orange-600"
+                >
                   Train Details
                 </Heading>
               </div>
@@ -108,7 +154,11 @@ export default function BookPage() {
                 >
                   2
                 </Heading>
-                <Text size="md" as="p" className="text-center !text-blue_gray-900_66">
+                <Text
+                  size="md"
+                  as="p"
+                  className="text-center !text-blue_gray-900_66"
+                >
                   Your Details
                 </Text>
               </div>
@@ -120,7 +170,11 @@ export default function BookPage() {
                 >
                   3
                 </Heading>
-                <Text size="md" as="p" className="text-center !text-blue_gray-900_66">
+                <Text
+                  size="md"
+                  as="p"
+                  className="text-center !text-blue_gray-900_66"
+                >
                   Confirmation & Payment
                 </Text>
               </div>
@@ -133,7 +187,11 @@ export default function BookPage() {
               >
                 4
               </Heading>
-              <Text size="md" as="p" className="text-center !text-blue_gray-900_66">
+              <Text
+                size="md"
+                as="p"
+                className="text-center !text-blue_gray-900_66"
+              >
                 Ticket Summery
               </Text>
             </div>
@@ -144,7 +202,11 @@ export default function BookPage() {
                 Train Details
               </Heading>
               <div className="mt-[18px] flex gap-5">
-                <Button color="gray_200" shape="circle" className="w-[50px] rotate-[180deg] !rounded-[25px]">
+                <Button
+                  color="gray_200"
+                  shape="circle"
+                  className="w-[50px] rotate-[180deg] !rounded-[25px]"
+                >
                   <Img src="images/img_arrow_left.svg" />
                 </Button>
                 <Button shape="circle" className="w-[50px] !rounded-[25px]">
@@ -164,7 +226,11 @@ export default function BookPage() {
                 />
               </div>
             </div>
-            <Button size="xl" shape="round" className="mr-[11px] min-w-[311px] font-bold md:mr-0 sm:px-5">
+            <Button
+              size="xl"
+              shape="round"
+              className="mr-[11px] min-w-[311px] font-bold md:mr-0 sm:px-5"
+            >
               Go to the Next Step
             </Button>
           </div>
@@ -175,7 +241,11 @@ export default function BookPage() {
             <div className="flex flex-col gap-8 self-stretch">
               <div className="flex items-start justify-between gap-5 md:flex-col">
                 <div className="flex flex-col items-start gap-5">
-                  <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                  <Heading
+                    size="md"
+                    as="h5"
+                    className="!font-extrabold !text-white-A700"
+                  >
                     Home
                   </Heading>
                   <div className="flex flex-col items-start gap-3.5">
@@ -192,7 +262,11 @@ export default function BookPage() {
                   </div>
                 </div>
                 <div className="flex flex-col items-start justify-center gap-5">
-                  <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                  <Heading
+                    size="md"
+                    as="h5"
+                    className="!font-extrabold !text-white-A700"
+                  >
                     Help
                   </Heading>
                   <a href="#">
@@ -203,13 +277,24 @@ export default function BookPage() {
                 </div>
                 <div className="flex w-[53%] items-start justify-between gap-5 md:w-full sm:flex-col">
                   <div className="flex w-[44%] flex-col items-start gap-5 sm:w-full">
-                    <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                    <Heading
+                      size="md"
+                      as="h5"
+                      className="!font-extrabold !text-white-A700"
+                    >
                       Contacts
                     </Heading>
                     <div className="flex flex-col gap-[19px] self-stretch">
                       <div className="flex items-center gap-2.5">
-                        <Img src="images/img_ci_location.svg" alt="cilocation_one" className="h-[24px] w-[24px]" />
-                        <Heading as="h6" className="w-[92%] leading-[26px] !text-white-A700">
+                        <Img
+                          src="images/img_ci_location.svg"
+                          alt="cilocation_one"
+                          className="h-[24px] w-[24px]"
+                        />
+                        <Heading
+                          as="h6"
+                          className="w-[92%] leading-[26px] !text-white-A700"
+                        >
                           <>
                             Sri Lanka Railways Headquarters,
                             <br />
@@ -240,7 +325,11 @@ export default function BookPage() {
                     </div>
                   </div>
                   <div className="flex flex-col items-center gap-5">
-                    <Heading size="md" as="h5" className="!font-extrabold !text-white-A700">
+                    <Heading
+                      size="md"
+                      as="h5"
+                      className="!font-extrabold !text-white-A700"
+                    >
                       Social Media
                     </Heading>
                     <div className="flex gap-5 self-start">
@@ -260,7 +349,8 @@ export default function BookPage() {
               <div className="h-px bg-white-A700_19" />
             </div>
             <Text as="p" className="text-center !text-white-A700">
-              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka Railways
+              ©2022 Sri Lanka Railways (SLR). All rights Reserved Sri Lanka
+              Railways
             </Text>
           </div>
         </footer>
