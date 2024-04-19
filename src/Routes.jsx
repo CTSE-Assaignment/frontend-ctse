@@ -6,6 +6,7 @@ import Book from "pages/Book";
 import BookTwo from "pages/BookTwo";
 import BookThree from "pages/BookThree";
 import AboutUs from "pages/AboutUs";
+import UserRegister from "pages/UserRegister";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -14,6 +15,10 @@ const ProjectRoutes = () => {
     {
       path: "home",
       element: <Home />,
+    },
+    {
+      path: "register",
+      element: <UserRegister />,
     },
     {
       path: "book",
