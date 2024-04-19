@@ -3,119 +3,82 @@ import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading } from "../../components";
 import { ReactTable } from "../../components/ReactTable";
 import { createColumnHelper } from "@tanstack/react-table";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
-const tableData = [
-  {
-    trainname: "8056 Express Train - Maradana - Beliatta ",
-    depature: "14.45",
-    rowarrival: "18.09",
-    availability: "15",
-  },
-  {
-    trainname: "FRI, 23 DEC 2024",
-    depature: "14.45",
-    rowarrival: "18.09",
-    availability: "15",
-  },
-  {
-    trainname: "14:30 - 18:05 PM",
-    depature: "14.45",
-    rowarrival: "Air Condition ",
-    availability: "15",
-  },
-  {
-    trainname: "8056 Express Train - Maradana - Beliatta ",
-    depature: "14.45",
-    availability: "15",
-  },
-  {
-    trainname: "FRI, 23 DEC 2024",
-    depature: "14.45",
-    rowarrival: "18.09",
-    availability: "15",
-  },
-  { trainname: "14:30 - 18:05 PM", depature: "14.45", availability: "15" },
-];
 
 export default function BookPage() {
-  const tableColumns = React.useMemo(() => {
-    const tableColumnHelper = createColumnHelper();
-    return [
-      tableColumnHelper.accessor("trainname", {
-        cell: (info) => (
-          <Heading size="lg" as="h4">
-            {info?.getValue?.()}
-          </Heading>
-        ),
-        header: (info) => (
-          <Heading
-            size="md"
-            as="h3"
-            className="py-[17px] pl-2.5 !text-blue_gray-900_99"
-          >
-            Train Name
-          </Heading>
-        ),
-        meta: { width: "533px" },
-      }),
-      tableColumnHelper.accessor("depature", {
-        cell: (info) => (
-          <Heading as="h6" className="self-end">
-            {info?.getValue?.()}
-          </Heading>
-        ),
-        header: (info) => (
-          <Heading
-            size="md"
-            as="h4"
-            className="py-[17px] text-center !text-blue_gray-900_99"
-          >
-            Depature
-          </Heading>
-        ),
-        meta: { width: "296px" },
-      }),
-      tableColumnHelper.accessor("rowarrival", {
-        cell: (info) => <Heading as="h6">{info?.getValue?.()}</Heading>,
-        header: (info) => (
-          <div className="flex flex-wrap items-start p-3.5">
-            <Heading
-              size="md"
-              as="h5"
-              className="mb-1 text-center !text-blue_gray-900_99"
-            >
-              Arrival
-            </Heading>
-            <Heading
-              size="md"
-              as="h6"
-              className="mr-[115px] text-center !text-blue_gray-900_99"
-            >
-              Class
-            </Heading>
-          </div>
-        ),
-        meta: { width: "413px" },
-      }),
-      tableColumnHelper.accessor("availability", {
-        cell: (info) => (
-          <Heading as="h6" className="self-end text-center">
-            {info?.getValue?.()}
-          </Heading>
-        ),
-        header: (info) => (
-          <Heading
-            size="md"
-            as="h5"
-            className="py-[17px] text-center !text-blue_gray-900_99"
-          >
-            Availability
-          </Heading>
-        ),
-        meta: { width: "195px" },
-      }),
-    ];
-  }, []);
+
+  const navigate = useNavigate();
+
+  const sampleTrainData = [
+    {
+      _id: "1",
+      name: "Express Train A",
+      departureTime: "08:00 AM",
+      arrivalTime: "12:00 PM",
+      fromLocation: "Station A",
+      toLocation: "Station B",
+      date: new Date("2024-04-20"),
+      class: "First Class",
+      availableSeats: 50,
+      totalSeats: 100
+    },
+    {
+      _id: "2",
+      name: "Local Train B",
+      departureTime: "10:30 AM",
+      arrivalTime: "01:30 PM",
+      fromLocation: "Station C",
+      toLocation: "Station D",
+      date: new Date("2024-04-21"),
+      class: "Second Class",
+      availableSeats: 80,
+      totalSeats: 120
+    },
+    {
+      _id: "3",
+      name: "Express Train C",
+      departureTime: "12:00 PM",
+      arrivalTime: "04:00 PM",
+      fromLocation: "Station E",
+      toLocation: "Station F",
+      date: new Date("2024-04-22"),
+      class: "First Class",
+      availableSeats: 60,
+      totalSeats: 100
+    },
+    {
+      _id: "4",
+      name: "Local Train D",
+      departureTime: "02:30 PM",
+      arrivalTime: "05:30 PM",
+      fromLocation: "Station G",
+      toLocation: "Station H",
+      date: new Date("2024-04-23"),
+      class: "Second Class",
+      availableSeats: 90,
+      totalSeats: 120
+    },
+    {
+      _id: "5",
+      name: "Express Train E",
+      departureTime: "05:00 PM",
+      arrivalTime: "09:00 PM",
+      fromLocation: "Station I",
+      toLocation: "Station J",
+      date: new Date("2024-04-24"),
+      class: "First Class",
+      availableSeats: 70,
+      totalSeats: 100
+    }
+  ];
+  
+
+  const handleClick = (selectedTrain)=>{
+   
+    navigate('/bookTwo', { state: { selectedTrain } })
+  }
 
   return (
     <>
@@ -216,23 +179,44 @@ export default function BookPage() {
             </div>
             <div className="relative h-[439px] self-stretch pr-[11px]">
               <div className="absolute bottom-0 left-0 right-0 top-0 m-auto h-max w-full rounded-[24px] border border-solid border-gray-200">
-                <ReactTable
-                  size="xs"
-                  bodyProps={{ className: "" }}
-                  headerProps={{ className: "md:flex-col" }}
-                  rowDataProps={{ className: "md:flex-col flex-wrap" }}
-                  columns={tableColumns}
-                  data={tableData}
-                />
+              <table className="table table-striped table-bordered">
+        <thead className="thead-dark">
+          <tr>
+            <th>name</th>
+            <th>departureTime</th>
+            <th>arrivalTime</th>
+            <th>fromLocation</th>
+            <th>toLocation</th>
+            <th>date</th>
+            <th>class</th>
+            <th>availableSeats</th>
+            <th>totalSeats</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sampleTrainData.map(train => (
+            <tr key={train._id}>
+           
+              <td>{train.name}</td>
+              <td>{train.departureTime}</td>
+              <td>{train.arrivalTime}</td>
+              <td>{train.fromLocation}</td>
+              <td>{train.toLocation}</td>
+              <td>{train.date.toString()}</td>
+              <td>{train.class}</td>
+              <td>{train.availableSeats}</td>
+              <td>{train.totalSeats}</td>
+              <td>
+                <Button onClick={() => handleClick(train)}>Select</Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
               </div>
             </div>
-            <Button
-              size="xl"
-              shape="round"
-              className="mr-[11px] min-w-[311px] font-bold md:mr-0 sm:px-5"
-            >
-              Go to the Next Step
-            </Button>
+           
           </div>
         </div>
         <footer className="flex items-center justify-center self-stretch bg-blue_gray-900 p-10 sm:p-5">

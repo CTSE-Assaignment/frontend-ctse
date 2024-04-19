@@ -1,8 +1,16 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Radio } from "../../components";
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export default function BookThreePage() {
+
+  const navigate = useNavigate();
+
+    const location = useLocation();
+    const { selectedTrain, userDetails } = location.state;
+console.log("user details", userDetails)
   return (
     <>
       <Helmet>
