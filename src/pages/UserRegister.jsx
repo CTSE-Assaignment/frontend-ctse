@@ -76,9 +76,7 @@ const UserRegister = () => {
                 <div className="row d-flex justify-content-center align-items-center h-100s h-100 text-light">
                     <div className="col-md-9 col-lg-6 col-xl-5"></div>
                     <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style={{ padding: '80px', borderRadius: '15px', boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)' }}>
-                        <button className='btn btn-primary rounded-top text-center' style={{ backgroundColor: 'rgb(249 139 2 / var(--tw-bg-opacity))' }}>Register</button>
-
-
+                    <div className='bg-primary rounded-top text-center p-2' >Register</div>
                         <form className="p-4 d-flex flex-column bg-light rounded-bottom">
                             <div className="form-outline mb-4 bg-light">
                                 <input type="text" id="formName" className="form-control form-control-lg"
