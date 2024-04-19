@@ -385,7 +385,7 @@ export default function BookTwoPage() {
                     as="h4"
                     className="text-right !text-orange-600"
                   >
-                    Rs.0.00
+                    Rs.{userDetails.adult*2500+ userDetails.child*2500+ userDetails.infant*2500}
                   </Heading>
                 </div>
               </div>
