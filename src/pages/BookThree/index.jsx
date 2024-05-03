@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Radio } from "../../components";
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
 
 export default function BookThreePage() {
 
@@ -10,7 +11,42 @@ export default function BookThreePage() {
 
     const location = useLocation();
     const { selectedTrain, userDetails } = location.state;
-console.log("user details", userDetails)
+console.log("user details", localStorage.getItem('user'))
+  const placeBooking = ()=>{
+    console.log("Clicked")
+    const total = userDetails.adult*2500+ userDetails.child*2500+ userDetails.infant*2500
+    const bookingData = {
+      passengerFirstName: userDetails.firstName,
+      passengerLastName: userDetails.lastName,
+      bookedBy: localStorage.getItem('user'),
+      gender: userDetails.gender,
+      nicOrPassport: userDetails.nicOrPassport,
+      mobileNumber: userDetails.phoneNumber,
+      trainDetails: {
+        trainId:  selectedTrain._id,
+        departureDate: selectedTrain.date,
+        departureTime:  selectedTrain.departureTime,
+      },
+      tickets: {
+        adults: userDetails.adult,
+        children: userDetails.child,
+        infants: userDetails.infant,
+      },
+      totalPrice: total,
+    };
+    
+    // Make a POST request using Axios
+    axios.post('http://localhost:4005/bookings', bookingData)
+      .then(response => {
+        console.log('Booking created successfully:', response.data);
+      })
+      .catch(error => {
+        console.error('Error creating booking:', error);
+      });
+
+      
+   
+  }
   return (
     <>
       <Helmet>
@@ -289,6 +325,7 @@ console.log("user details", userDetails)
                 size="xl"
                 shape="round"
                 className="w-full font-bold sm:px-5"
+                onClick={()=>placeBooking()}
               >
                 Checkout
               </Button>

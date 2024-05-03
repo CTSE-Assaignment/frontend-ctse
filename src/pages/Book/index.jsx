@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading } from "../../components";
 import { ReactTable } from "../../components/ReactTable";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
 
-
+const BACKEND = "http://localhost:4005"
 export default function BookPage() {
 
   const navigate = useNavigate();
+  const [books, setBooks] = useState([]);
 
+  
+  
+const fetchBooks = async() => {
+    try {
+      const response = await axios.get(`${BACKEND}/trains/`);
+      const books = response.data;
+      setBooks(books);
+      console.log(books)
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+useEffect(()=>{
+  fetchBooks()
+}, [])
   const sampleTrainData = [
     {
       _id: "1",
@@ -195,7 +213,7 @@ export default function BookPage() {
           </tr>
         </thead>
         <tbody>
-          {sampleTrainData.map(train => (
+          {books.map(train => (
             <tr key={train._id}>
            
               <td>{train.name}</td>

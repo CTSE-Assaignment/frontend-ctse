@@ -11,6 +11,7 @@ import UserLogin from "pages/UserLogin";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import TestLocked from "pages/TestLocked";
+import MyTickets from "pages/MyTickets";
 
 const API_BASE = "http://localhost:4000";
 
@@ -53,6 +54,13 @@ function App() {
             path="login"
             element={<UserLogin loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
           />
+
+
+          {loggedIn ? (
+            <Route path="my-tickets" element={<MyTickets />} />
+          ) : (
+            <Route path="*" element={<UserLogin loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+          )}
           
 
           <Route path="aboutus" element={<AboutUs />} />
