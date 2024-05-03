@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const API_BASE = "http://localhost:4000";
@@ -9,6 +9,7 @@ const API_BASE = "http://localhost:4000";
 const UserLogin = ({ loggedIn, setLoggedIn }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
     console.log(loggedIn)
 
     const loginUser = async () => {
@@ -24,6 +25,9 @@ const UserLogin = ({ loggedIn, setLoggedIn }) => {
             await setLoggedIn(true); // Set logged in state to true
             console.log(loggedIn); // Set logged in state to true
             console.log("User logged in:", loggedInUser);
+            localStorage.setItem('email', loggedInUser.email);
+            localStorage.setItem('user', loggedInUser._id);
+            navigate('/book');
             // Redirect the user or perform any other actions after successful login
         } catch (error) {
             console.error('Error logging in:', error);
