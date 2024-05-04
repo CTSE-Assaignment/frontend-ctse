@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, SelectBox } from "../../components";
 import HomeTourpackages from "../../components/HomeTourpackages";
+import { getDestinations } from "controllers/DestinationService";
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },
@@ -10,6 +11,20 @@ const dropDownOptions = [
 ];
 
 export default function HomePage() {
+  const [destinations, setDestinations] = useState([]);
+
+  const fetchDestinations = async () => {
+    try {
+      const response = await getDestinations();
+      setDestinations(response.data);
+    } catch (error) {
+      console.error("Error fetching destinations:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDestinations();
+  }, []);
   return (
     <>
       <Helmet>
@@ -158,84 +173,15 @@ export default function HomePage() {
             <Heading size="xl" as="h2" className="text-center">
               Explore Popular Destinations{" "}
             </Heading>
-            <div className="mb-[3px] flex gap-5">
-              <Button
-                color="gray_200"
-                shape="circle"
-                className="w-[50px] rotate-[180deg] !rounded-[25px]"
-              >
-                <Img src="images/img_arrow_left.svg" />
-              </Button>
-              <Button shape="circle" className="w-[50px] !rounded-[25px]">
-                <Img src="images/img_arrow_right.svg" />
-              </Button>
-            </div>
           </div>
           <div className="mx-auto flex w-full max-w-[1427px] flex-col gap-[140px] md:gap-[105px] md:p-5 sm:gap-[70px]">
             <div className="flex gap-[35px] md:flex-col">
-              <div className="flex w-full flex-col gap-4">
-                <Img
-                  src="images/img_rectangle_16.png"
-                  alt="badulla_one"
-                  className="h-[404px] rounded-[24px] object-cover"
+              {destinations.map((destination) => (
+                <HomeTourpackages
+                  key={destination._id}
+                  destination={destination}
                 />
-                <div className="flex flex-col items-start gap-[11px]">
-                  <Heading size="lg" as="h2" className="text-center">
-                    Badulla
-                  </Heading>
-                  <div className="flex flex-wrap items-start gap-2.5">
-                    <Heading
-                      as="h3"
-                      className="mt-[3px] !text-blue_gray-900_cc"
-                    >
-                      from
-                    </Heading>
-                    <Heading
-                      size="lg"
-                      as="h4"
-                      className="!font-extrabold !text-orange-600"
-                    >
-                      Colombo Fort
-                    </Heading>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Img
-                      src="images/img_calendar_orange_600.svg"
-                      alt="every_day_one"
-                      className="h-[24px] w-[24px]"
-                    />
-                    <Heading
-                      size="xs"
-                      as="h5"
-                      className="text-center !text-orange-600"
-                    >
-                      EVERY DAY
-                    </Heading>
-                  </div>
-                  <Text
-                    size="s"
-                    as="p"
-                    className="leading-[26px] !text-blue_gray-900"
-                  >
-                    Badulla is a charming city in the lower central hills of Sri
-                    Lanka, where you ...
-                  </Text>
-                </div>
-              </div>
-              <HomeTourpackages className="flex w-full flex-col gap-4" />
-              <HomeTourpackages
-                image="images/img_rectangle_16_1.png"
-                place="Ella"
-                weekday="TO BE DECIDED"
-                badullaisa="Ella is known as one of the most beautiful parts of Sri Lanka ..."
-                className="flex w-full flex-col gap-4"
-              />
-              <HomeTourpackages
-                image="images/img_rectangle_16_2.png"
-                place="Kandy"
-                weekday="TO BE DECIDED"
-                className="flex w-full flex-col gap-4"
-              />
+              ))}
             </div>
             <div className="flex items-center justify-between gap-5 md:flex-col">
               <div className="relative h-[650px] w-[32%] md:w-full">
