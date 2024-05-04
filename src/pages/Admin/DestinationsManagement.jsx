@@ -92,6 +92,7 @@ const DestinationsManagement = () => {
       handleCancel();
       const response = await getDestinations();
       setDestinations(response.data);
+      setSelectedDestination();
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -196,7 +197,7 @@ const DestinationsManagement = () => {
           >
             <Input.TextArea />
           </Form.Item>
-          {!setDestinationImage && (
+          {!selectedDestination && (
             <Form.Item label="Image URL" name="imageUrl">
               <ImageUpload onUpload={onUpload} />
             </Form.Item>
