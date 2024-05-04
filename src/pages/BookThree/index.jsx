@@ -1,31 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Radio } from "../../components";
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { useSnapshot } from "valtio";
+import state from "store";
+import { createBooking } from "controllers/BookingService";
+import { message } from "antd";
 
 export default function BookThreePage() {
-
   const navigate = useNavigate();
+  const snap = useSnapshot(state);
+  const selectedTrain = snap.selectedTrain;
+  const userDetails = snap.ticketUserData;
+  console.log("user details", localStorage.getItem("user"));
+  const placeBooking = async () => {
+    console.log("Clicked");
 
-    const location = useLocation();
-    const { selectedTrain, userDetails } = location.state;
-console.log("user details", localStorage.getItem('user'))
-  const placeBooking = ()=>{
-    console.log("Clicked")
-    const total = userDetails.adult*2500+ userDetails.child*2500+ userDetails.infant*2500
+    const total =
+      userDetails.adult * 2500 +
+      userDetails.child * 2500 +
+      userDetails.infant * 2500;
     const bookingData = {
       passengerFirstName: userDetails.firstName,
       passengerLastName: userDetails.lastName,
-      bookedBy: localStorage.getItem('user'),
+      bookedBy: "6635b0a86d435efe221ef0c7",
       gender: userDetails.gender,
       nicOrPassport: userDetails.nicOrPassport,
       mobileNumber: userDetails.phoneNumber,
       trainDetails: {
-        trainId:  selectedTrain._id,
+        trainId: selectedTrain._id,
         departureDate: selectedTrain.date,
-        departureTime:  selectedTrain.departureTime,
+        departureTime: selectedTrain.departureTime,
       },
       tickets: {
         adults: userDetails.adult,
@@ -34,19 +41,20 @@ console.log("user details", localStorage.getItem('user'))
       },
       totalPrice: total,
     };
-    
-    // Make a POST request using Axios
-    axios.post('http://localhost:4005/bookings', bookingData)
-      .then(response => {
-        console.log('Booking created successfully:', response.data);
-      })
-      .catch(error => {
-        console.error('Error creating booking:', error);
-      });
 
-      
-   
-  }
+    try {
+      console.log(bookingData);
+      await createBooking(bookingData);
+      message.success("Booking created successfully");
+      navigate("/");
+    } catch (error) {
+      message.error("Error creating your booking");
+    } finally {
+      // state.selectedTrain = null;
+      // state.ticketUserData = null;
+      // state.ticketData = null;
+    }
+  };
   return (
     <>
       <Helmet>
@@ -219,7 +227,7 @@ console.log("user details", localStorage.getItem('user'))
                 <div className="border-b border-solid border-gray-200 py-5">
                   <div className="flex flex-col items-start gap-[11px]">
                     <Heading size="lg" as="h3">
-                      8056 Express Train - Maradana - Beliatta{" "}
+                      {selectedTrain?.name}
                     </Heading>
                     <div className="flex items-center gap-2.5">
                       <Img
@@ -325,7 +333,7 @@ console.log("user details", localStorage.getItem('user'))
                 size="xl"
                 shape="round"
                 className="w-full font-bold sm:px-5"
-                onClick={()=>placeBooking()}
+                onClick={() => placeBooking()}
               >
                 Checkout
               </Button>

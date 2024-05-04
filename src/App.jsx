@@ -84,27 +84,9 @@ function App() {
             />
           )}
 
-          {loggedIn ? (
-            <Route path="booktwo" element={<BookTwo />} />
-          ) : (
-            <Route
-              path="*"
-              element={
-                <UserLogin loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-              }
-            />
-          )}
+          <Route path="booktwo" element={<BookTwo />} />
 
-          {loggedIn ? (
-            <Route path="bookthree" element={<BookThree />} />
-          ) : (
-            <Route
-              path="*"
-              element={
-                <UserLogin loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-              }
-            />
-          )}
+          <Route path="bookthree" element={<BookThree />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
