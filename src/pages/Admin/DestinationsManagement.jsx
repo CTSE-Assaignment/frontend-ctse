@@ -8,6 +8,7 @@ import {
   message,
   Popconfirm,
   Space,
+  Row,
 } from "antd";
 import {
   getDestinations,
@@ -105,13 +106,13 @@ const DestinationsManagement = () => {
     },
     { title: "Schedule", dataIndex: "schedule", key: "schedule" },
     { title: "Description", dataIndex: "description", key: "description" },
-    { title: "Image URL", dataIndex: "imageUrl", key: "imageUrl" },
+
     {
       title: "Action",
       key: "action",
       render: (_, record) => (
         <Space>
-          <Button type="outlined" onClick={() => handleEditDestination(record)}>
+          <Button type="dashed" onClick={() => handleEditDestination(record)}>
             Edit
           </Button>{" "}
           <Popconfirm
@@ -129,10 +130,12 @@ const DestinationsManagement = () => {
 
   return (
     <div>
-      <h1>Destinations Management</h1>
-      <Button type="primary" onClick={handleAddDestination}>
-        Add Destination
-      </Button>
+      <Row justify={"space-around"} style={{ marginBottom: 20 }}>
+        <h1 style={{ fontSize: 18 }}>Destinations Management</h1>
+        <Button type="dashed" onClick={handleAddDestination}>
+          Add Destination
+        </Button>
+      </Row>
       <Table
         dataSource={destinations}
         columns={columns}
@@ -193,9 +196,11 @@ const DestinationsManagement = () => {
           >
             <Input.TextArea />
           </Form.Item>
-          <Form.Item label="Image URL" name="imageUrl">
-            <ImageUpload onUpload={onUpload} />
-          </Form.Item>
+          {!setDestinationImage && (
+            <Form.Item label="Image URL" name="imageUrl">
+              <ImageUpload onUpload={onUpload} />
+            </Form.Item>
+          )}
         </Form>
       </Modal>
     </div>
