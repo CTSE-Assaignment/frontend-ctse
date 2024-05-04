@@ -71,7 +71,7 @@ const UserManagement = () => {
 
   const handleDelete = async (record) => {
     try {
-      await deleteUser(record.id);
+      await deleteUser(record._id);
       message.success("User deleted successfully");
       // Refresh users after delete
       const response = await fetchUsers();
